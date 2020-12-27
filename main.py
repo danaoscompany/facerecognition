@@ -14,4 +14,4 @@ unknown_encoding = face_recognition.face_encodings(unknown_image)[0]
 results = face_recognition.compare_faces([biden_encoding], unknown_encoding)
 for item in results:
 	print(item)
-os.makedirs("/home/dana/test")
+	break
