@@ -18,7 +18,7 @@ io.on('connection', function(socket) {
    		let img1url = data['img1url'];
    		let img2url = data['img2url'];
    		// python2 main.py --img1url http://45.132.240.102/facerecognition/img1.jpg --img2url http://45.132.240.102/facerecognition/img2.jpg
-   		exec("python2 /home/dana/Documents/Python/FaceRecognition/main.py --img1url "+img1url+" --img2url "+img2url, (error, stdout, stderr) => {
+   		exec("python2 main.py --img1url "+img1url+" --img2url "+img2url, (error, stdout, stderr) => {
     		if (error) {
         		console.log(`error: ${error.message}`);
         		return;
