@@ -14,7 +14,7 @@ io.on('connection', function(socket) {
    socket.on('testEvent', function(data) {
       console.log(data);
    });
-   socket.on('facerecognition', function(data) {
+   socket.on('faceRecognition', function(data) {
    		let img1url = data['img1url'];
    		let img2url = data['img2url'];
    		// python2 main.py --img1url http://45.132.240.102/facerecognition/img1.jpg --img2url http://45.132.240.102/facerecognition/img2.jpg
@@ -27,7 +27,8 @@ io.on('connection', function(socket) {
         		console.log(`stderr: ${stderr}`);
         		return;
 		    }
-		    console.log(`stdout: ${stdout}`);
+		    console.log(stdout);
+		    socket.emit('faceRecognitionResponse', {'result': stdout});
 		});
    });
 });
