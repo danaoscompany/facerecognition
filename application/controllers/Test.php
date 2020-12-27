@@ -11,6 +11,8 @@ class Test extends CI_Controller {
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('file')) {
         	echo $this->upload->data()['file_name'];
+        } else {
+        	echo json_encode($this->upload->display_errors());
         }
 	}
 	
@@ -23,6 +25,8 @@ class Test extends CI_Controller {
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('file')) {
         	echo $this->upload->data()['file_name'];
+        } else {
+        	echo json_encode($this->upload->display_errors());
         }
 	}
 }
